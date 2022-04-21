@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'draggable-resizable-demo';
+  title = 'Draggable Resizable Demo';
+
+  items = [
+    {id: 1},
+    {id: 2},
+    {id: 3},
+    {id: 4},
+  ]
 }
