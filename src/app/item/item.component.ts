@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { CdkDragEnd, CdkDragMove, Point } from '@angular/cdk/drag-drop';
+import { Component, ElementRef, Input, OnInit } from '@angular/core';
 
 export interface Item {
   id: number,
@@ -16,9 +17,32 @@ export interface Item {
 export class ItemComponent implements OnInit {
   @Input() item: Item;
 
-  constructor() { }
+  /** Class name of the bounding container */
+  dragBoundary: string = '.dragContainer'
+  dragPosition: Point = {x: 0, y: 0}
+
+  constructor(private el: ElementRef<HTMLElement>) { }
 
   ngOnInit(): void {
+    this.updateDragPosition(this.item)
+  }
+
+  onDragMoved($event: CdkDragMove) {
+    this.updatePosition($event.source.getFreeDragPosition());
+  }
+  
+  onDragEnd($event: CdkDragEnd) {
+    this.updatePosition($event.source.getFreeDragPosition());
+  }
+
+  private updatePosition(point: Point) {
+    this.item.left = point.x;
+    this.item.top = point.y
+  }
+
+  private updateDragPosition(item: Item): void {
+    this.dragPosition.x = item.left;
+    this.dragPosition.y = item.top;
   }
 
 }

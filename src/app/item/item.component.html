@@ -1,8 +1,14 @@
 <div class="item" 
     [style.width.px]="item.width" 
     [style.height.px]="item.height" 
-    [style.transform]="'translate3d(' + item.left + 'px, ' + item.top + 'px,' + '0px)'"
     cdkDrag
->    
+    [cdkDragBoundary]="dragBoundary"
+    [cdkDragFreeDragPosition]="dragPosition"
+    (cdkDragMoved)="onDragMoved($event)"
+    (cdkDragEnded)="onDragEnd($event)"
+>
+
     Item {{item.id}}
+    <br>
+    (x: {{item.left}} | y: {{item.top}})
 </div>
