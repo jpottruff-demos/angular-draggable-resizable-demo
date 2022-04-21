@@ -1,5 +1,7 @@
 .item {
+  position: absolute;
   border: 1px solid #2b303a;
+  box-sizing: border-box;
   color: #2b303a;
   background-color: #92dce5;
 }

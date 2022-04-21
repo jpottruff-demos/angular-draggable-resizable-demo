@@ -2,7 +2,10 @@ import { Component, Input, OnInit } from '@angular/core';
 
 export interface Item {
   id: number,
-
+  width: number, 
+  height: number,
+  top: number, 
+  left: number
 }
 
 @Component({

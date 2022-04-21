@@ -1,4 +1,6 @@
 .dragContainer {
+  position: relative;
+  box-sizing: border-box;
   height: 400px;
   width: 600px;
   background-color: #eee5e9;

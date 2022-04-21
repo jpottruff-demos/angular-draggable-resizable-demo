@@ -1,3 +1,7 @@
-<div class="item">
+<div class="item" 
+    [style.width.px]="item.width" 
+    [style.height.px]="item.height" 
+    [style.transform]="'translate3d(' + item.left + 'px, ' + item.top + 'px,' + '0px)'"
+>    
     Item {{item.id}}
 </div>
