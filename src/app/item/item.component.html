@@ -6,9 +6,13 @@
     [cdkDragFreeDragPosition]="dragPosition"
     (cdkDragMoved)="onDragMoved($event)"
     (cdkDragEnded)="onDragEnd($event)"
+    appResizable
+    (resized)="onResized($event)"
 >
 
     Item {{item.id}}
     <br>
     (x: {{item.left}} | y: {{item.top}})
+    <br>
+    (w: {{item.width}} | h: {{item.height}})
 </div>

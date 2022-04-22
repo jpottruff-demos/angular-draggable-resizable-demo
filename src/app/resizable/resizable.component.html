@@ -1,1 +1,71 @@
-<p>resizable works!</p>
+<ng-content></ng-content>
+<!-- NW, NE, SW, SE -->
+<div 
+    class="handle handle--nw"
+    cdkDrag
+    (cdkDragStarted)="onDragStart(handle.NW)"
+    (cdkDragEnded)="onDragEnd($event)"
+    (cdkDragMoved)="onDragMoved($event)"
+></div>
+<div class="handle-visible handle-visible--nw"></div>
+
+<div class="handle handle--ne"
+    cdkDrag
+    (cdkDragStarted)="onDragStart(handle.NE)"
+    (cdkDragEnded)="onDragEnd($event)"
+    (cdkDragMoved)="onDragMoved($event)"
+></div>
+<div class="handle-visible handle-visible--ne"></div>
+
+<div class="handle handle--sw"
+    cdkDrag
+    (cdkDragStarted)="onDragStart(handle.SW)"
+    (cdkDragEnded)="onDragEnd($event)"
+    (cdkDragMoved)="onDragMoved($event)"
+></div>
+<div class="handle-visible handle-visible--sw"></div>
+
+<div class="handle handle--se"
+    cdkDrag
+    (cdkDragStarted)="onDragStart(handle.SE)"
+    (cdkDragEnded)="onDragEnd($event)"
+    (cdkDragMoved)="onDragMoved($event)"
+></div>
+<div class="handle-visible handle-visible--se"></div>
+
+<!-- N, E, S, W -->
+<div class="handle handle--n"
+    cdkDrag
+    cdkDragLockAxis="y"
+    (cdkDragStarted)="onDragStart(handle.N)"
+    (cdkDragEnded)="onDragEnd($event)"
+    (cdkDragMoved)="onDragMoved($event)"
+></div>
+<div class="handle-visible handle-visible--n"></div>
+
+<div class="handle handle--e"
+    cdkDrag
+    cdkDragLockAxis="x"
+    (cdkDragStarted)="onDragStart(handle.E)"
+    (cdkDragEnded)="onDragEnd($event)"
+    (cdkDragMoved)="onDragMoved($event)"
+></div>
+<div class="handle-visible handle-visible--e"></div>
+
+<div class="handle handle--s"
+    cdkDrag
+    cdkDragLockAxis="y"
+    (cdkDragStarted)="onDragStart(handle.S)"
+    (cdkDragEnded)="onDragEnd($event)"
+    (cdkDragMoved)="onDragMoved($event)"
+></div>
+<div class="handle-visible handle-visible--s"></div>
+
+<div class="handle handle--w"
+    cdkDrag
+    cdkDragLockAxis="x"
+    (cdkDragStarted)="onDragStart(handle.W)"
+    (cdkDragEnded)="onDragEnd($event)"
+    (cdkDragMoved)="onDragMoved($event)"
+></div>
+<div class="handle-visible handle-visible--w"></div>

@@ -1,0 +1,87 @@
+:host {
+  --handle-size: 8px;
+  --half-handle-size: calc(0.5 * var(--handle-size));
+  --handle-color: black;
+}
+
+.handle {
+  position: absolute;
+  width: var(--handle-size);
+  height: var(--handle-size);
+  background-color: transparent;
+}
+
+.handle-visible {
+  pointer-events: none;
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: var(--half-handle-size) solid var(--handle-color);
+}
+
+.handle--nw {
+  cursor: nw-resize;
+}
+.handle--ne {
+  cursor: ne-resize;
+}
+.handle--sw {
+  cursor: sw-resize;
+}
+.handle--se {
+  cursor: se-resize;
+}
+.handle--n {
+  cursor: n-resize;
+}
+.handle--e {
+  cursor: e-resize;
+}
+.handle--s {
+  cursor: s-resize;
+}
+.handle--w {
+  cursor: w-resize;
+}
+
+.handle--nw,
+.handle-visible--nw {
+  top: 0;
+  left: 0;
+}
+.handle--ne,
+.handle-visible--ne {
+  top: 0;
+  right: 0;
+}
+.handle--sw,
+.handle-visible--sw {
+  bottom: 0;
+  left: 0;
+}
+.handle--se,
+.handle-visible--se {
+  bottom: 0;
+  right: 0;
+}
+
+.handle--n,
+.handle-visible--n {
+  top: 0;
+  left: calc(50% - var(--half-handle-size));
+}
+.handle--e,
+.handle-visible--e {
+  top: calc(50% - var(--half-handle-size));
+  right: 0;
+}
+.handle--s,
+.handle-visible--s {
+  bottom: 0;
+  left: calc(50% - var(--half-handle-size));
+}
+.handle--w,
+.handle-visible--w {
+  top: calc(50% - var(--half-handle-size));
+  left: 0;
+}

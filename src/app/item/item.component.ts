@@ -1,5 +1,6 @@
 import { CdkDragEnd, CdkDragMove, Point } from '@angular/cdk/drag-drop';
 import { Component, ElementRef, Input, OnInit } from '@angular/core';
+import { ResizeData } from '../resizable/resizable.component';
 
 export interface Item {
   id: number,
@@ -27,15 +28,19 @@ export class ItemComponent implements OnInit {
     this.updateDragPosition(this.item)
   }
 
-  onDragMoved($event: CdkDragMove) {
+  onDragMoved($event: CdkDragMove): void {
     this.updatePosition($event.source.getFreeDragPosition());
   }
   
-  onDragEnd($event: CdkDragEnd) {
+  onDragEnd($event: CdkDragEnd): void {
     this.updatePosition($event.source.getFreeDragPosition());
   }
 
-  private updatePosition(point: Point) {
+  onResized($event: ResizeData): void {
+    console.log($event)
+  }
+
+  private updatePosition(point: Point): void {
     this.item.left = point.x;
     this.item.top = point.y
   }
